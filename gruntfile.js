@@ -22,11 +22,11 @@ module.exports = function(grunt) {
   				dest: 'images/build/'
   			}]
   		}
-  	}
+  	},
 
   	watch: {
 	    scripts: {
-	        files: ['scss/*.scss'],
+	        files: ['sass/*.scss'],
 	        tasks: ['sass'],
 	        options: {
 	            spawn: false,

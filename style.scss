@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+* {
+	box-sizing: border-box;
+}
+
+/* SASS - fonts */
+
+$font-open: 'Open Sans', sans-serif;
+$font-marker: 'Permanent Marker', cursive;
+
+/* SASS - colors */
+$color-header_icons_footer: #313332;
+$color-nav_hover: #515352;
+$color-social: #00C7E8;
+$color-button: #1C2625;
+$color-devilsgray: #666;
+$color-footer_div_bg: #252726;
+$color-promo_bg: #797B7A;
+
+/* SASS - Mixins */
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+		-webkit-border-radius: $radius;
+	  	-moz-border-radius: $radius;
+		-ms-border-radius: $radius;
+}
+
+/*GENERAL*/
+
+body {
+	margin: 0;
+	font-family: $font-open;
+}
+
+h1, h3 {
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.row:before, .row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container {
+	width: 85%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+[class*="col-"] {
+	width: 100%;
+ 	float: left;
+ 	min-height: 1px;
+ 	padding: 10px;
+}
+
+/*HEADER*/
+
+header {
+	width: 100%;
+	height: auto;
+	background-color: $color-header_icons_footer;
+}
+/*NAVIGATION*/
+
+nav {
+	img {
+		padding-top: 10px;	
+	}
+
+	ul {
+		margin: 0;
+		height: 70px;
+		line-height: 70px;
+		padding: 0;
+		list-style-type: none;
+		float: right;
+		
+		li {
+			display: inline-block;
+
+			a {
+				text-decoration: none;
+				padding: 0 20px;
+				color: #FFF;
+				display: block;
+				text-transform: uppercase;
+				font-family: $font-open;
+				
+				&:hover {
+					background-color: $color-nav_hover;
+					text-shadow: 0 0 5px $color-header_icons_footer;
+				}
+			}
+		}
+	}
+}
+
+
+/*HERO*/
+
+.hero {
+	height: calc(80vh - (50px));
+	background: $color-devilsgray url("https://static.pexels.com/photos/89786/cup-of-coffee-laptop-office-macbook-89786.jpeg") center/cover no-repeat;
+}
+
+.slogan {
+	background-color: rgba(0, 0, 0, 0.5);
+	float: right;
+	max-width: 800px;
+	position:relative;
+	top: 30%;
+	text-transform: uppercase;
+
+	h1 {
+		padding: 0 20vw 0 40px;
+		color: #FFF;
+	}
+}
+
+.preslogan {
+			font-weight: normal;
+		}
+
+/*SECTIONS*/
+
+section.container {
+	padding: 40px 0;
+	text-align: center;
+}
+
+/* BENEFITS SECTIONS */
+/* ------ ICONS */
+
+.benefits .fa {
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 50px;
+	@include border-radius(10px);
+	background-color: $color-header_icons_footer;
+	color: #FFF;
+}
+
+.benefits .fa-laptop  {
+	background-color: $color-social;
+}
+	
+/*------ HEADINGS AND TEXT */
+
+
+.benefits>.row>div>h3 {
+	color: $color-header_icons_footer;
+}
+
+.benefits>.row>div>h3.blue_heading {
+	color: $color-social;
+}
+/*GALLERY*/
+
+section.gallery {
+	margin-bottom: 50px;
+
+	>div>div {
+		padding: 0;
+	}
+}	
+
+
+.layer {
+	position: relative;
+	width: 100%;
+	background-color: black;
+	img {
+		width: 100%;
+		margin: 0;
+		transition: 1s;
+		display: block;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	button {
+		position: absolute;
+		top: 45%;
+		@include border-radius(10%);
+		visibility: hidden;
+		border: none;
+		background-color: #FFF;
+		color: $color-button;
+		padding: 8px;
+	}
+	&:hover {
+		button {visibility: visible;}
+	}
+	
+	.btn-1 {
+	 	left: 20%;
+	}
+
+	.btn-2 {
+		left: 70%;
+	}
+
+}
+
+
+
+/*JOBS*/
+section.employees>div>div {
+	padding: 0;
+}
+
+.jobs {
+	background-color: $color-devilsgray;
+	@include border-radius(50%);
+	position: relative;
+	img {
+		display: block;
+		@include border-radius(50%);
+		width: 100%;
+		margin: 0;
+		transition: 1s;
+		padding: 0;
+	}
+	p {
+		position: absolute;
+		top: 35%;
+		left: 50%;
+		color: #000;
+		font-size: 24px;
+		font-weight: bold;
+		color: white;
+		visibility: hidden;
+		transform: translate(-50%,-50%);
+		transition: 1s;
+	}
+}
+
+
+.jobs img:hover {opacity:0.5;}
+.jobs img:hover ~ p{visibility: visible;}
+
+
+.names {
+	font-size: 24px;
+	font-weight: bold;
+	color: $color-devilsgray;
+	padding: 20px 0;
+}
+.jobs-mobile {
+	display: none;
+}
+
+/*PROMO*/
+.grey_bg {
+	background-color: $color-promo_bg;
+}
+
+section.promo>div>div {
+	color: #FFF;
+	margin: 0;
+	padding: 0;
+}
+
+.promo>.row>div>h1 {
+	text-align: left;
+	font-weight: bold;
+	padding-left: 8px;
+}
+.promo>.row>div>div>div>p {
+	text-align: left;
+	
+}
+.italic {
+	font-style: italic;
+}
+
+.cat_parent {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	@include border-radius(10%);
+	border: 5px dashed #000;
+}
+
+.cat {
+	display: block;
+	width: 100%;
+	@include border-radius(10%); 
+}
+
+/*NUMBERS*/
+.numbers>div>h1 {
+	font-family: $font-marker;
+	font-size: 50px;
+	margin: 0 auto;
+}
+
+/*FOOTER*/
+
+footer {
+	background-color: #313332;
+	color: #FFF;
+	h1 {
+		margin-top: 0;
+		color: #FFF;
+		text-align: left;
+	}
+}
+
+footer>section>div>div {
+	text-align: left;
+}
+
+.contact_bold {
+	font-weight: bold;
+}
+
+footer>div {
+	float: left;
+	text-align: center;
+	width: 100%; 
+	height: 50px;
+	line-height: 50px;
+	background-color: #252726;
+	color: #FFF;
+}
+
+.media_icons>a {
+	
+	display: inline-block;
+	text-align: center;
+	padding-right: 5px;
+}
+.media_icons>a>i {
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	background-color: #00C7E9;
+	color: white;
+	font-size: 16px;
+}
